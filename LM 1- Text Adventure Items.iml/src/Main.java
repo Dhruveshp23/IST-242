@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Item goldBar = new Gold();
+        Item goldBar = new Gold(10);
         Item magicSword = new Sword();
         Item softPillow = new Pillow();
         Item bigMace = new Mace();
