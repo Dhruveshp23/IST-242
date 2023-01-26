@@ -1,17 +1,8 @@
 public class Gold extends Item{
     private int amt;
-    public Gold(){
-        super("Gold", "A round coin with %s stamped on the  front.",50);
+    public Gold(int amt){
+        super("Gold", String.format( "A round coin with %s stamped on the  front.", String.valueOf(amt)), amt);
         this.amt = amt;
     }
-    public String getName()
-    {
-        return name;
-    }
-    public String getdesc()
-    {
-        return desc;
-    }
-}
 
 
