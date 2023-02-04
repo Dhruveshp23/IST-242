@@ -1,5 +1,5 @@
 public class Weapon extends Item{
-    private int damage;
+     int damage;
     public int getDamage(){
         return damage;
     }
@@ -13,6 +13,6 @@ public class Weapon extends Item{
 
 
     public String Str(){
-        return String.format("{0}\n=====\n{1}\nvalue: {2}\nDamge: {3}", this.name, this.desc, this.value, this.damage);
+        return String.format("{0}\n=====\n{1}\nvalue: {2}\n Damage: {3}", this.name, this.desc, this.value, this.damage);
     }
 }

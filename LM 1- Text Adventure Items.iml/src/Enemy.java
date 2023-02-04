@@ -1,8 +1,7 @@
 public class Enemy {
-    protected String name;
+   String name;
     protected int hp;
     protected int damage;
-
 
     public Enemy(String name, int hp, int damage) {
         this.name = name;
@@ -10,7 +9,7 @@ public class Enemy {
         this.damage = damage;
 
     }
-
+  
     public boolean is_alive(){
         return (this.hp > 0);
     }

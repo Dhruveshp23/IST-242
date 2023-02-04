@@ -1,5 +1,5 @@
 public class Lizards extends Enemy{
-    public Lizards(){
-        super("Lizards",25,30);
+    public Lizards(String name, int hp, int damage){
+        super(name,hp,damage);
     }
 }

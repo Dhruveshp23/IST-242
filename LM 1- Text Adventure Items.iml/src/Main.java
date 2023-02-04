@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-//Item objects        
+//Item objects
         Item goldBar = new Gold(10);
         System.out.println(goldBar);
 
@@ -15,25 +15,25 @@ public class Main {
         System.out.println(bigMace);
 
 // Enemy objects
-        Enemy greenOgre = new Ogre();
+        Enemy greenOgre = new Ogre("greenOgre",30,20);
         System.out.println(greenOgre);
 
-        Enemy redOgre = new Ogre();
+        Enemy redOgre = new Ogre("redOgre",35,25);
         System.out.println(redOgre);
 
-        Enemy slowZombie = new Zombie();
+        Enemy slowZombie = new Zombie("slowZombie", 20, 15);
         System.out.println(slowZombie);
 
-        Enemy fastZombie = new Zombie();
+        Enemy fastZombie = new Zombie("fastZombie", 25, 20);
         System.out.println(fastZombie);
 
-        Enemy spotDog = new Dog();
+        Enemy spotDog = new Dog("spotDog", 20, 15);
         System.out.println(spotDog);
 
-        Enemy bigSpider = new GiantSpider();
+        Enemy bigSpider = new GiantSpider("bigSpider",10,5);
         System.out.println(bigSpider);
 
-        Enemy poisonLizard = new Lizards();
+        Enemy poisonLizard = new Lizards("poisonLizard",25,30);
         System.out.println(poisonLizard);
 
 
