@@ -9,7 +9,11 @@ public class Enemy {
         this.damage = damage;
 
     }
-  
+    public Enemy(){
+    }
+
+
+
     public boolean is_alive(){
         return (this.hp > 0);
     }
