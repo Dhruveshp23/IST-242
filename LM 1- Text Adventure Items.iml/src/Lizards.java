@@ -1,10 +1,8 @@
 public class Lizards extends Enemy{
 
-    String name;
-    protected int hp;
-    protected int damage;
-    protected int poisonLevel;
-    protected String colourChanging;
+
+    private int poisonLevel;
+    private String colourChanging;
     public Lizards(String name, int hp, int damage, int poisonLevel, String colourChanging){
         this.name = name;
         this.hp = hp;

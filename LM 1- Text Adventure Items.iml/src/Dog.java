@@ -1,9 +1,6 @@
 public class Dog extends Enemy{
-    String name;
-    protected int hp;
-    protected int damage;
-    protected String smellStrength;
-    protected String teeth;
+    private String smellStrength;
+    private String teeth;
 
     public Dog(String name, int hp, int damage, String smellStrength, String teeth){
         this.name = name;

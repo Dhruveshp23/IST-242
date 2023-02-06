@@ -1,9 +1,7 @@
 public class GiantSpider extends Enemy{
-    String name;
-    protected int hp;
-    protected int damage;
-    protected String webSize;
-    protected  String colour;
+
+    private String webSize;
+    private String colour;
 
     public GiantSpider(String name, int hp, int damage, String webSize, String colour){
         this.name = name;
