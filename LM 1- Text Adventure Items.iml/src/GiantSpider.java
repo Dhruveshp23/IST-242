@@ -3,10 +3,8 @@ public class GiantSpider extends Enemy{
     private String webSize;
     private String colour;
 
-    public GiantSpider(String name, int hp, int damage, String webSize, String colour){
-        this.name = name;
-        this.hp = hp;
-        this.damage = damage;
+    public GiantSpider(String webSize, String colour){
+        super("bigSpider",10,5);
         this.webSize = webSize;
         this.colour = colour;
 

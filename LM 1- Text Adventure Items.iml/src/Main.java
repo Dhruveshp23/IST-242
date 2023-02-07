@@ -15,25 +15,26 @@ public class Main {
         System.out.println(bigMace);
 
 // Enemy objects
-        Ogre greenOgre = new Ogre("greenOgre",20,30,"Low","Short & Thin");
+        Ogre greenOgre = new Ogre("Low","Short & Thin");
         System.out.println(greenOgre);
 
-        Ogre redOgre = new Ogre("redOgre",30,30,"High","Long & Thick");
+        
+       Ogre redOgre = new Ogre("High","Long & Thick");
         System.out.println(redOgre);
 
-        Zombie slowZombie = new Zombie("slowZombie", 20, 15,"Slow","Good");
+       Zombie slowZombie = new Zombie("Slow", "Good");
         System.out.println(slowZombie);
 
-        Zombie fastZombie = new Zombie("fastZombie", 20, 20,"Fast","Low");
+        Zombie fastZombie = new Zombie("Fast", "Low");
         System.out.println(fastZombie);
 
-        Dog spotDog = new Dog("spotDog", 20, 15,"High","Sharp");
+        Dog spotDog = new Dog("High","Sharp");
         System.out.println(spotDog);
 
-        GiantSpider bigSpider = new GiantSpider("bigSpider",10,5,"Big","Red");
+        GiantSpider bigSpider = new GiantSpider("Big","Red");
         System.out.println(bigSpider);
 
-        Lizards poisonLizard = new Lizards("poisonLizard",25,30,3,"yes");
+        Lizards poisonLizard = new Lizards(3,"yes");
         System.out.println(poisonLizard);
 
 

@@ -3,10 +3,8 @@ public class Lizards extends Enemy{
 
     private int poisonLevel;
     private String colourChanging;
-    public Lizards(String name, int hp, int damage, int poisonLevel, String colourChanging){
-        this.name = name;
-        this.hp = hp;
-        this.damage = damage;
+    public Lizards( int poisonLevel, String colourChanging){
+        super("poisonLizard",25,30);
         this.poisonLevel = poisonLevel;
         this.colourChanging = colourChanging;
 

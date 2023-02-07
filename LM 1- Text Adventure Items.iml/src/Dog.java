@@ -2,10 +2,8 @@ public class Dog extends Enemy{
     private String smellStrength;
     private String teeth;
 
-    public Dog(String name, int hp, int damage, String smellStrength, String teeth){
-        this.name = name;
-        this.hp = hp;
-        this.damage = damage;
+    public Dog( String smellStrength, String teeth){
+        super("spotDog", 20, 15);
         this.smellStrength = smellStrength;
         this.teeth = teeth;
 
