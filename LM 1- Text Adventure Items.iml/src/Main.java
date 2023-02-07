@@ -15,11 +15,10 @@ public class Main {
         System.out.println(bigMace);
 
 // Enemy objects
-        Ogre greenOgre = new Ogre("Low","Short & Thin");
+        Ogre greenOgre = new Ogre("Short","High");
         System.out.println(greenOgre);
 
-        
-       Ogre redOgre = new Ogre("High","Long & Thick");
+       Ogre redOgre = new Ogre("Long","Low");
         System.out.println(redOgre);
 
        Zombie slowZombie = new Zombie("Slow", "Good");
