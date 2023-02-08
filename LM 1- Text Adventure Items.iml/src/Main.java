@@ -1,3 +1,4 @@
+
 public class Main {
     public static void main(String[] args) {
 
@@ -36,6 +37,28 @@ public class Main {
         Lizards poisonLizard = new Lizards(3,"yes");
         System.out.println(poisonLizard);
 
+// Action objects
+
+      MoveEast moveEast = new MoveEast();
+      System.out.println(moveEast.Str());
+
+      MoveWest moveWest = new MoveWest();
+      System.out.println(moveWest.Str());
+
+      MoveNorth moveNorth = new MoveNorth();
+      System.out.println(moveNorth.Str());
+
+      MoveSouth moveSouth = new MoveSouth();
+      System.out.println(moveSouth.Str());
+
+      Action crouch = new Crouch();
+      System.out.println(crouch.Str());
+
+      Action flee = new Flee();
+      System.out.println(flee.Str());
+
+      Action viewInventory = new ViewInventory();
+      System.out.println(viewInventory.Str());
 
     }
 }
