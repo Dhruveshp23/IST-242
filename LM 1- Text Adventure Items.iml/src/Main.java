@@ -51,13 +51,13 @@ public class Main {
       MoveSouth moveSouth = new MoveSouth();
       System.out.println(moveSouth.Str());
 
-      Action crouch = new Crouch();
+      Crouch crouch = new Crouch();
       System.out.println(crouch.Str());
 
-      Action flee = new Flee();
+      Flee flee = new Flee();
       System.out.println(flee.Str());
 
-      Action viewInventory = new ViewInventory();
+      ViewInventory viewInventory = new ViewInventory();
       System.out.println(viewInventory.Str());
 
     }
