@@ -6,11 +6,9 @@ public class Action {
         return hotkey;
 
     }
-
     public void setHotkey(char hotkey){
         this.hotkey = hotkey;
     }
-
     private String name;
     public String getName(){
         return name;
@@ -34,7 +32,6 @@ public class Action {
         this.name = name;
         this.kwargs = kwargs;
     }
-
     public String Str(){
         return hotkey + ":" + name;
     }

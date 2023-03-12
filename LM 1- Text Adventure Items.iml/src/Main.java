@@ -60,5 +60,8 @@ public class Main {
       ViewInventory viewInventory = new ViewInventory();
       System.out.println(viewInventory.Str());
 
+        World world = new World();
+        world.loadTiles();
+
     }
 }
