@@ -7,7 +7,7 @@ import java.util.List;
 
 public class World {
     public static String[][] world;
-    private static Point startingPosition = new Point(0, 0);
+    static Point startingPosition = new Point(0, 0);
     public static ArrayList<MapTile> history = new ArrayList<MapTile>();
 
     public void loadTiles() {
@@ -47,5 +47,51 @@ public class World {
         return history;
     }
 
+    public static MapTile tile_exists(int x, int y) {
+        MapTile mt = null;
+
+        //Todo : verify the x and y exist in the world
+        if ((x >= 0 && x < _world.length) && (y >= 0 && y < _world[0].length)
+                && _world[x][y] != null) {
+            switch (_world[x][y]) {
+                case "StartingRoom":
+                    mt = new StartingRoom(x, y);
+                    mt = checkRoomExists(mt);
+                    break;
+                case "FindDaggerRoom":
+
+                    mt = new FindDaggerRoom(x, y);
+                    mt = checkRoomExists(mt);
+                    break;
+                case "GiantSpiderRoom":
+                    mt = new GiantSpiderRoom(x, y, new GiantSpider());
+                    mt = checkRoomExists(mt);
+                    break;
+                case "TreasureRoom":
+                    mt = new TreasureRoom(x, y, new Gold(15));
+                    mt = checkRoomExists(mt);
+                    break;
+                case "EmptyCavePath":
+                    mt = new EmptyCavePath(x, y);
+                    break;
+                case "FindArrowRoom":
+                    mt = new FindArrowRoom(x, y);
+                    mt = checkRoomExists(mt);
+                    break;
+                case "OgreRoom":
+                    mt = new OgreRoom(x, y, new Ogre());
+                    mt = checkRoomExists(mt);
+                    break;
+                case "LeaveCaveRoom":
+                    mt = new LeaveCaveRoom(x, y);
+                    break;
+
+
+            }
+        }
+        return mt;
+
+    }
+}
 
 }

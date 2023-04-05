@@ -1,9 +1,7 @@
 import java.util.*;
-
 public class MapTile {
     int x;
     int y;
-
     public MapTile(int x, int y){
         this.x = x;
         this.y = y;
@@ -15,9 +13,7 @@ public class MapTile {
         result = prime * result + y;
         return result;
     }
-
-
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj){
         if (this == obj)
             return true;
         if (obj == null)
@@ -25,16 +21,32 @@ public class MapTile {
         if (getClass() != obj.getClass())
             return false;
         MapTile other = (MapTile) obj;
-        if (x != other.x || y != other.y)
+        if (x != other.x)
+            return false;
+        if (x != other.y)
             return false;
         return true;
     }
-    public List<MapTile> adjacent_moves() {
-        List<MapTile> adjacents = new ArrayList<>();
-        adjacents.add(new MapTile(x + 1, y));
-        adjacents.add(new MapTile(x - 1, y));
-        adjacents.add(new MapTile(x, y +1));
-        adjacents.add(new MapTile(x, y - 1));
-        return adjacents;
+
+    public String intro_text(){throw new UnsupportedOperationException();}
+
+    public void modify_player(Player player) {throw new UnsupportedOperationException();}
+    public ArrayList<Action> adjacent_moves(){
+        ArrayList<Action> moves = new ArrayList<>();
+        if (World.tile_exists(x, y +1) !=null)
+            moves.add(new MoveEast());
+        if (World.tile_exists(x, y -1) !=null)
+            moves.add(new MoveWest());
+        if (World.tile_exists(x -1, y) !=null)
+            moves.add(new MoveNorth());
+        if (World.tile_exists(x +1, y) !=null)
+            moves.add(new MoveNorth());
+        return moves;
+    }
+    public ArrayList<Action> available_action(){
+        ArrayList<Action> moves = new ArrayList<>();
+        moves = adjacent_moves();
+        moves.add(new ViewInventory());
+        return moves;
     }
 }
