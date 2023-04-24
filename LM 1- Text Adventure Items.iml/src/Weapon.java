@@ -1,18 +1,14 @@
-public class Weapon extends Item{
-     int damage;
-    public int getDamage(){
+public class Weapon extends Items{
+    private int damage;
+    public int getDamage() {
         return damage;
     }
-    public void setDamage(){
+    public void setDamage(int damage) {
         this.damage = damage;
     }
-    public Weapon(String name, String desc, int value, int damage){
-        super(name,desc,value);
+    public Weapon(String name, String desc, int value,int damage){
+        super(name, desc, value);
         this.damage = damage;
     }
 
-
-    public String Str(){
-        return String.format("{0}\n=====\n{1}\nvalue: {2}\n Damage: {3}", this.name, this.desc, this.value, this.damage);
-    }
 }

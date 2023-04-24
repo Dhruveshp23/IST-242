@@ -1,8 +1,5 @@
-public class MoveNorth extends Action {
+public class MoveNorth extends  Action {
     public MoveNorth(){
-        super(Method.MoveNorth,"Move North",'N',null );
-
+        super(Method.MoveNorth,"Move North",'n',null);
     }
-
-
 }

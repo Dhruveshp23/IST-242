@@ -8,4 +8,5 @@ public class TreasureRoom extends LootRoom {
         else
             return "";
     }
+
 }

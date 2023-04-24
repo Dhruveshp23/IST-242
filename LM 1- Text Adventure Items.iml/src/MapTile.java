@@ -6,14 +6,17 @@ public class MapTile {
         this.x = x;
         this.y = y;
     }
-    public int hashCode(){
+    @Override
+    public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + x;
         result = prime * result + y;
         return result;
     }
-    public boolean equals(Object obj){
+
+    @Override
+    public boolean equals(Object obj) {
         if (this == obj)
             return true;
         if (obj == null)
@@ -23,7 +26,7 @@ public class MapTile {
         MapTile other = (MapTile) obj;
         if (x != other.x)
             return false;
-        if (x != other.y)
+        if (y != other.y)
             return false;
         return true;
     }
@@ -40,10 +43,12 @@ public class MapTile {
         if (World.tile_exists(x -1, y) !=null)
             moves.add(new MoveNorth());
         if (World.tile_exists(x +1, y) !=null)
-            moves.add(new MoveNorth());
+            moves.add(new MoveSouth());
         return moves;
+
+
     }
-    public ArrayList<Action> available_action(){
+   public ArrayList<Action> available_actions(){
         ArrayList<Action> moves = new ArrayList<>();
         moves = adjacent_moves();
         moves.add(new ViewInventory());

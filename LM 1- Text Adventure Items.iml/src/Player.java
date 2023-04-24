@@ -11,6 +11,7 @@ public class Player implements Comparable<Player>{
     int hp;
 
     String name;
+
     public int compareTo (Player othrPlyr) { return othrPlyr.score.compareTo(this.score); }
     public String getName () { return name; }
 
@@ -26,7 +27,7 @@ public class Player implements Comparable<Player>{
     Boolean victory;
     int location_x, location_y;
     int prevLocatnX, prevLocatnY;
-    ArrayList<Item> inventory = new ArrayList<>();
+    ArrayList<Items> inventory = new ArrayList<>();
 
 
 
@@ -36,8 +37,8 @@ public class Player implements Comparable<Player>{
         inventory.add(new Gold(20));
         inventory.add(new Pillow());
         this.hp = 200;
-        this.location_x = World.startingPosition.x;
-        this.location_y = World.startingPosition.y;
+        this.location_x = World.Starting_Position.x;
+        this.location_y = World.Starting_Position.y;
         this.victory = false;
     }
 
@@ -49,18 +50,18 @@ public class Player implements Comparable<Player>{
 
     public void print_inventory(){
         int totalGold=0;Gold geld=null ;
-        for (Item item: inventory) {
+        for (Items item: inventory) {
             if (!(item instanceof Gold))
             {
 
                 System.out.println(item.toString());
-            }
-            else {
+        }
+        else {
                 geld = (Gold) item;
                 totalGold += geld.amt;
             }
         }
-        Item gold = new Gold(totalGold);
+        Items gold = new Gold(totalGold);
         plyrGold = totalGold;
         System.out.println(gold.toString());
     }
@@ -68,7 +69,7 @@ public class Player implements Comparable<Player>{
     public void updateGold()
     {
         int totalGold=0;Gold geld=null ;
-        for (Item item: inventory){
+        for (Items item: inventory){
             if(!(item instanceof Gold))
             {
 
@@ -79,7 +80,7 @@ public class Player implements Comparable<Player>{
                 totalGold += geld.amt;
             }
         }
-        Item gold = new Gold(totalGold);
+        Items gold = new Gold(totalGold);
         plyrGold = totalGold;
     }
 
@@ -117,12 +118,16 @@ public class Player implements Comparable<Player>{
             {
                 System.out.println("Name:"+p.getName()+"     Score:"+p.getScore());
 
+
             }
+
         }
         catch(IOException e)
         {
             e.printStackTrace();
         }
+
+
     }
 
     public void move(int dx, int dy){
@@ -149,7 +154,7 @@ public class Player implements Comparable<Player>{
     {
         Weapon best_weapon = new Weapon("None","None",0,0);
         int max_dmg = 0;
-        for (Item i:inventory){
+        for (Items i:inventory){
             if (i instanceof Weapon){
                 Weapon wpn = (Weapon)i;
                 if (wpn.getDamage() > max_dmg){
@@ -167,7 +172,7 @@ public class Player implements Comparable<Player>{
 
         }
     }
-    public void do_action(Action action, Enemy kwargs,MapTile mp){
+     public void do_action(Action action, Enemy kwargs,MapTile mp){
         if(kwargs == null)
         {
             if(action instanceof MoveEast)
@@ -194,5 +199,5 @@ public class Player implements Comparable<Player>{
         {
             attackEnemy(kwargs);
         }
-    }
+     }
 }

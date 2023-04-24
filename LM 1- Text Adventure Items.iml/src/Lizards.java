@@ -4,7 +4,7 @@ public class Lizards extends Enemy{
     private int poisonLevel;
     private String colourChanging;
     public Lizards( int poisonLevel, String colourChanging){
-        super("poisonLizard",25,30);
+        super("poisonLizard","poison",30,20);
         this.poisonLevel = poisonLevel;
         this.colourChanging = colourChanging;
 

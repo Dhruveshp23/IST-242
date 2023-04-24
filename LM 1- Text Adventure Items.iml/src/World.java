@@ -1,52 +1,45 @@
 import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class World {
-    public static String[][] world;
-    static Point startingPosition = new Point(0, 0);
+    public static String[][] _world;
+    static Point Starting_Position = new Point(0, 0);
     public static ArrayList<MapTile> history = new ArrayList<MapTile>();
 
-    public void loadTiles() {
-        List<String[]> rows = new ArrayList<>();
-        try (BufferedReader f = new BufferedReader(new FileReader("src/map.txt"))) {
+    public void load_tiles() {
+
+        List<String> rows = new ArrayList<String>();
+        try {
+            BufferedReader f = new BufferedReader(new FileReader("src/map.txt")); // Buffer Class
             String row;
-            while ((row = f.readLine()) != null) {
-                rows.add(row.split("\t"));
+            while ((row = f.readLine()) != null) {                                       // f - Object
+                rows.add(row);
             }
-            int xMax = rows.get(0).length;
-            world = new String[rows.size()][xMax];
+            f.close();
+            int x_max = rows.get(0).split("\t").length;   // finding number of cols // split find the character
+            _world = new String[rows.size()][x_max];
+            String[] cols;
+            String tile_name;
             for (int y = 0; y < rows.size(); y++) {
-                String[] cols = rows.get(y);
-                for (int x = 0; x < xMax; x++) {
-                    String tileName = cols[x];
-                    if (tileName.equals("Starting Point")) {
-                        startingPosition.x = x;
-                        startingPosition.y = y;
+                cols = rows.get(y).split("\t");
+                for (int x = 0; x < cols.length; x++) {           // Counter control loop
+                    tile_name = cols[x];
+                    if (tile_name.equals("StartingRoom")) {
+                        Starting_Position.x = y;
+                        Starting_Position.y = x;
                     }
-                    world[y][x] = tileName.equals(" ") ? null : tileName;
+                    _world[y][x] = tile_name.equals(" ") ? null : tile_name;
                 }
             }
-        } catch (IOException e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    public static String[][] getWorld() {
-        return world;
-    }
-
-    public static Point getStartingPosition() {
-        return startingPosition;
-    }
-
-    public static ArrayList<MapTile> getHistory() {
-        return history;
-    }
-
     public static MapTile tile_exists(int x, int y) {
         MapTile mt = null;
 
@@ -58,9 +51,9 @@ public class World {
                     mt = new StartingRoom(x, y);
                     mt = checkRoomExists(mt);
                     break;
-                case "FindDaggerRoom":
+                case "FindSwordRoom":
 
-                    mt = new FindDaggerRoom(x, y);
+                    mt = new FindSwordRoom(x, y, new Sword());
                     mt = checkRoomExists(mt);
                     break;
                 case "GiantSpiderRoom":
@@ -75,11 +68,11 @@ public class World {
                     mt = new EmptyCavePath(x, y);
                     break;
                 case "FindArrowRoom":
-                    mt = new FindArrowRoom(x, y);
+                    mt = new FindArrowRoom(x, y,new Arrow());
                     mt = checkRoomExists(mt);
                     break;
                 case "OgreRoom":
-                    mt = new OgreRoom(x, y, new Ogre());
+                    mt = new OgreRoom(x, y, new Ogre("Green and Red Ogre","Green Ogre 20 in Length and Red Ogre 30 in Length "));
                     mt = checkRoomExists(mt);
                     break;
                 case "LeaveCaveRoom":
@@ -92,6 +85,12 @@ public class World {
         return mt;
 
     }
-}
-
-}
+    private static MapTile checkRoomExists(MapTile mt) {
+        if (history.indexOf(mt) != -1) {
+            mt = history.get(history.indexOf(mt));
+        } else {
+            history.add(mt);
+        }
+        return mt;
+    }
+    }

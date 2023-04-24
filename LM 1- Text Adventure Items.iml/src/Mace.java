@@ -1,5 +1,5 @@
 public class Mace extends Weapon{
-    public Mace(){
-        super("Mace","A Mace. Somewhat more dangerous than a Sword",10,30);
+    public Mace() {
+        super("Mace","A Mace more Effective than Sword",15,35);
     }
 }

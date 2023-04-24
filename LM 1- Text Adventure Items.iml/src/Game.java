@@ -1,15 +1,23 @@
 import  java.io.*;
+import java.nio.channels.ReadableByteChannel;
 import java.util.ArrayList;
-
+import java.util.Scanner;
 public class Game {
 
     public static void main(String[] args) throws IOException{
         World world = new World();
-        world.loadTiles();
-        //System.out.println("Enter Player Name:");
-        //Scanner input = new Scanner(System.in);
-        String playerName= "Team Deadly Games";
+        world.load_tiles();
+
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter Player Name: ");
+        String playerName = input.nextLine();
         Player player = new Player(playerName);
+
+
+
+
+
 //		  //These lines load the starting room and display the text
         MapTile room = World.tile_exists(player.location_x, player.location_y);
         if(room != null)
@@ -22,7 +30,7 @@ public class Game {
 //			  // Check again since the room could have changed the player's state
                 if ((player.is_alive()) && (!player.victory)){
                     System.out.print("Choose an action:\n");
-                    ArrayList<Action> available_actions = room.available_action();
+                    ArrayList<Action> available_actions = room.available_actions();
                     for (Action action:available_actions){
                         System.out.print(action.getHotkey() +" : " + action.getName()+"\n");
                     }

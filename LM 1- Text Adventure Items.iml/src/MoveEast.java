@@ -1,5 +1,5 @@
-public class MoveEast extends Action {
+public class MoveEast extends Action{
     public MoveEast(){
-        super(Method.MoveEast,"Move East",'E',null);
+        super(Method.MoveEast,"Move East",'e',null);
     }
 }

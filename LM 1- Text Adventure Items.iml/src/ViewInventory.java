@@ -1,6 +1,5 @@
-public class ViewInventory extends Action{
+public class ViewInventory extends Action {
     public ViewInventory(){
-        super(Method.ViewInventory,"View Inventory",'I',null);
+        super(Method.VeiwInventory, "View Inventory",'i',null);
     }
-
 }
