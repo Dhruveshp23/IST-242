@@ -1,0 +1,4 @@
+ 	 	 	 	FindShipWrack
+FoodBox	ShovelBox	SnakeTerritory	EmptyBox	TreasureBox
+CrocodileTerritory	SnakeTerritory	StartingArea	TreasureBox	EmptyBox
+CrocodileTerritory	TreasureBox	EmptyBox	FoodBox	WidowSpiderTerritory
