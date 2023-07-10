@@ -1,0 +1,171 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pharmacy Dashboard</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css">
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- Custom CSS -->
+<style>
+body {
+background-color: #000;
+color: #fff;
+}
+
+.sidenav {
+width: 15%;
+height: 100vh;
+background-color: #000;
+position: fixed;
+z-index: 1;
+}
+
+.card {
+width: 100%;
+height: 100%;
+border-radius: 0;
+background-color: #000;
+padding: 15px;
+}
+
+.logo {
+text-align: center;
+}
+
+.logo .profile {
+margin: 0 auto;
+display: block;
+border-radius: 50%;
+width: 80px;
+height: 80px;
+object-fit: cover;
+}
+
+.logo .logo-caption {
+font-family: 'Poiret One', cursive;
+color: #fff;
+margin: 10px 0;
+}
+
+.main-menu-item {
+padding: 5px 0;
+}
+
+.main-menu-item > a {
+color: #fff;
+text-decoration: none;
+}
+
+.main-menu-item > a:hover {
+color: #ff5252;
+}
+
+.treeview-menu {
+margin-top: 10px;
+display: none;
+}
+
+.treeview-menu .treeview a {
+color: #fff;
+text-decoration: none;
+display: block;
+padding: 5px 0;
+}
+
+.treeview-menu .treeview a:hover {
+color: #ff5252;
+}
+</style>
+</head>
+
+<body>
+<div class="sidenav">
+<div class="card">
+<div class="logo">
+<img src="path/to/profile-image.jpg" class="profile" alt="Profile Picture">
+<h1 class="logo-caption">Admin</h1>
+</div>
+
+<div class="main-menu-item">
+<a href="#"><i class="fa fa-home"></i> Dashboard</a>
+</div>
+
+<div class="main-menu-item" onclick="showhide('first')">
+<a href="#"><i class="fa fa-file-invoice"></i> Invoice<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class="treeview-menu" id="first">
+<li class="treeview"><a href="#">New Invoice</a></li>
+<li class="treeview"><a href="#">Manage Invoice</a></li>
+</ul>
+</div>
+
+<div class="main-menu-item" onclick="showhide('second')">
+<a href="#"><i class="fa fa-user"></i> Customer<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class="treeview-menu" id="second">
+<li class="treeview"><a href="#">Add Customer</a></li>
+<li class="treeview"><a href="#">Manage Customer</a></li>
+</ul>
+</div>
+
+<div class="main-menu-item" onclick="showhide('third')">
+<a href="#"><i class="fa fa-medkit"></i> Medicine<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class="treeview-menu" id="third">
+<li class="treeview"><a href="#">Add Medicine</a></li>
+<li class="treeview"><a href="#">Manage Medicine</a></li>
+<li class="treeview"><a href="#">Manage Medicine Stock</a></li>
+</ul>
+</div>
+
+<div class="main-menu-item" onclick="showhide('fourth')">
+<a href="#"><i class="fa fa-truck"></i> Supplier<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class="treeview-menu" id="fourth">
+<li class="treeview"><a href="#">Add Supplier</a></li>
+<li class="treeview"><a href="#">Manage Supplier</a></li>
+</ul>
+</div>
+
+<div class="main-menu-item" onclick="showhide('fifth')">
+<a href="#"><i class="fa fa-shopping-cart"></i> Purchase<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class="treeview-menu" id="fifth">
+<li class="treeview"><a href="#">Add Purchase</a></li>
+<li class="treeview"><a href="#">Manage Purchase</a></li>
+</ul>
+</div>
+
+<div class="main-menu-item" onclick="showhide('sixth')">
+<a href="#"><i class="fa fa-chart-line"></i> Report<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class="treeview-menu" id="sixth">
+<li class="treeview"><a href="#">Sales Report</a></li>
+<li class="treeview"><a href="#">Purchase Report</a></li>
+</ul>
+</div>
+
+<div class="main-menu-item" onclick="showhide('seventh')">
+<a href="#"><i class="fa fa-search"></i> Search<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+<ul class="treeview-menu" id="seventh">
+<li class="treeview"><a href="#">Invoice</a></li>
+<li class="treeview"><a href="#">Customer</a></li>
+<li class="treeview"><a href="#">Medicine</a></li>
+<li class="treeview"><a href="#">Supplier</a></li>
+<li class="treeview"><a href="#">Purchase</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+<!-- Font Awesome JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<!-- Custom JS -->
+<script>
+function showhide(id) {
+var submenu = document.getElementById(id);
+submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
+}
+</script>
+</body>
+
+</html>
